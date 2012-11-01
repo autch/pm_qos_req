@@ -1,0 +1,9 @@
+
+obj-m += pm_qos_req.o
+
+modules:
+	make -C /lib/modules/$(KVER)/build M=$(PWD) modules
+clean:
+	make -C /lib/modules/$(KVER)/build M=$(PWD) clean
+modules_install:
+	make -C /lib/modules/$(KVER)/build M=$(PWD) modules_install

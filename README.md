@@ -1,5 +1,5 @@
 
-pm_qos_req: A Linux module for setting PM QoS request at fixed value
+# pm_qos_req: A Linux module for setting PM QoS request at fixed value
 
 This is a Linux module for setting some PM QoS request(s) at fixed
 values until it's unloaded.
@@ -33,6 +33,17 @@ Install:
     cp pm_qos_req.ko /lib/modules/`uname -r`/extra/
     depmod -a
 
+
+## DKMS
+
+    # cd $SOURCE_DIRECTORY_WHERE_YOU_CLONED
+    # mkdir /usr/src/pm_qos_req-1.0.0/
+    # cp * /usr/src/pm_qos_req-1.0.0/
+    # dkms add -m pm_qos_req -v 1.0.0
+    # dkms build -m pm_qos_req -v 1.0.0
+    # dkms install -m pm_qos_req -v 1.0.0
+
+
 ## Usage
 
 This module does the same thing as following:
@@ -65,3 +76,10 @@ See http://www.kernel.org/doc/Documentation/power/pm_qos_interface.txt for meani
     You should have received a copy of the GNU General Public License along
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
+## Author
+
+Autch <autch@autch.net>
+http://github.com/autch/pm_qos_req
+
